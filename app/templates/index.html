@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>{{ title }} - VOUSMEEVOYEZ</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/static/lib/html5up-editorial/assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!--c3 lib-->
+		<link rel="stylesheet" href="/static/lib/c3lib/c3.min.css"/>
+	</head>
+	<body>
+		<!-- Wrapper -->
+		<div id="wrapper">
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+					<!-- Header -->
+					<header id="header">
+						<a href="#" class="logo"><strong>{{ title }}</strong></a>
+						<!--
+						<ul class="icons">
+												<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+												<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+												<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+												<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+												<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+						</ul>-->
+					</header>
+					<!-- Banner -->
+					
+					<section>
+						<header class="major">
+							<h2>Sample Tweet</h2>
+						</header>
+						<section id="banner">
+							<div id="most_tweet_graph">
+								
+							</div>
+							<div id="most_hashtag_graph">
+								
+							</div>
+						</section>
+						<section id="banner">
+							
+						</section>
+						<div class="posts">
+							<article>
+								<h3>Tweet</h3>
+								<div id="sentimentgraph2017-12-26"></div>
+								<div id="hashtag2017-12-26"></div>
+								<div id="most2017-12-26"></div>
+							</article>
+							<article>
+								<h3>Tweet</h3>
+								<div id="graph2017-12-27"></div>
+							</article>
+							<article>
+								<h3>Tweet</h3>
+								<div id="graph2017-12-28"></div>
+							</article>
+							<article>
+								<h3>Tweet</h3>
+								<div id="graph2017-12-29"></div>
+							</article>
+							<article>
+								<h3>Tweet</h3>
+								<div id="graph2017-12-30"></div>
+							</article>
+							<article>
+								<h3>Tweet</h3>
+								<div id="graph2017-12-31"></div>
+							</article>
+						</div>
+					<div class="posts">
+						{% for tweet in tweets %}
+							<article>
+								<h3>Tweet</h3>
+								{% if tweet.sentiment == 'positive'%}
+									<p style="background: green;color: white;padding: 0.25em;">{{ tweet.raw_tweet }}</p>
+									<p>{{ tweet.raw_token }}</p>
+									<p>{{ tweet.stop_token }}</p>
+									{% elif tweet.sentiment == 'neutral'%}
+									<p style="background: #5DADE2;color: black;padding: 0.25em;">{{ tweet.raw_tweet }}</p>
+									<p>{{ tweet.raw_token }}</p>
+									<p>{{ tweet.stop_token }}</p>
+								{% else %}
+									<p style="background: red;color: white;padding: 0.25em;">{{ tweet.raw_tweet }}</p>
+									<p>{{ tweet.raw_token }}</p>
+									<p>{{ tweet.stop_token }}</p>
+								{% endif %}
+								<ul class="actions">
+									<li><a href="#" class="button">More</a></li>
+								</ul>
+							</article>
+						{% endfor %}
+					</section>
+				</div>
+			</div>
+			<!-- Sidebar -->
+			<div id="sidebar">
+				<div class="inner">
+					<!-- Search -->
+					<section id="search" class="alt">
+						<form method="post" action="#">
+							<input type="text" name="query" id="query" placeholder="Search" />
+						</form>
+					</section>
+					<!-- Menu -->
+					<nav id="menu">
+						<header class="major">
+							<h2>Menu</h2>
+						</header>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="index.html">Train Data Set</a></li>
+							<li><a href="index.html">Bitcoin Price Chart</a></li>
+							<li><a href="index.html">Twitter Analytics Chart</a></li>
+							<li><a href="index.html">Result</a></li>
+						</ul>
+					</nav>
+					<!-- Section
+						<section>
+												<header class="major">
+																		<h2>Ante interdum</h2>
+												</header>
+												<div class="mini-posts">
+																		<article>
+																								<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+																								<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+																		</article>
+																		<article>
+																								<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+																								<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+																		</article>
+																		<article>
+																								<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+																								<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+																		</article>
+												</div>
+												<ul class="actions">
+																		<li><a href="#" class="button">More</a></li>
+												</ul>
+						</section>
+					<!-- Section
+						<section>
+												<header class="major">
+																		<h2>Get in touch</h2>
+												</header>
+												<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+												<ul class="contact">
+																		<li class="fa-envelope-o"><a href="#">information@untitled.tld</a></li>
+																		<li class="fa-phone">(000) 000-0000</li>
+																		<li class="fa-home">1234 Somewhere Road #8254<br />
+																		Nashville, TN 00000-0000</li>
+												</ul>
+						</section>
+					<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; <a href="">VOUSMEEVOYEZ</a> 2017. All rights reserved.</p>
+					</footer>
+				</div>
+			</div>
+		</div>
+		<!-- c3.js -->
+		<script src="/static/lib/c3lib/d3.v3.min.js" charset="utf-8"></script>
+		<script src="/static/lib/c3lib/c3.min.js"></script>
+		<!-- Scripts -->
+		<script src="/static/custom.js"></script>
+		<script src="/static/lib/html5up-editorial/assets/js/jquery.min.js"></script>
+		<script src="/static/lib/html5up-editorial/assets/js/skel.min.js"></script>
+		<script src="/static/lib/html5up-editorial/assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="/static/lib/html5up-editorial/assets/js/main.js"></script>
+	</body>
+</html>

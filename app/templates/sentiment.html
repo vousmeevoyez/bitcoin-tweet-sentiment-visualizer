@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+	{% block content %}
+					<section>
+						<div id="hashtag_summary">
+							
+						</div>			
+					</section>
+					<section>
+						<div id="common_summary">
+							
+						</div>	
+					</section>
+					<section>
+						<div id="sentiment_summary">
+							
+						</div>	
+					</section>
+					{% for i in date: %}
+					<section>
+						<header class="major">
+							<h2>{{ i }}</h2>
+						</header>
+						<div class="posts">
+							<article>
+								<h3>Sentiment</h3>
+								<div id="sentimentgraph{{ i }}"></div>
+							</article>
+							<article>
+								<h3>Most Hashtag</h3>
+								<div id="hashtag{{ i }}"></div>
+							</article>
+							<article>
+								<h3>Most Tweet</h3>
+								<div id="most{{ i }}"></div>
+							</article>
+						</div>
+					</section>
+					{% endfor %}
+					<section>
+						<header class="major">
+							<h2>Sample Tweet</h2>
+						</header>
+						<div class="posts">
+						{% for tweet in tweets %}
+							<article>
+								<h3>Tweet</h3>
+								{% if tweet.sentiment == 'positive'%}
+									<p style="background: green;color: white;padding: 0.25em;">{{ tweet.raw_tweet }}</p>
+									<p>{{ tweet.raw_token }}</p>
+									<p>{{ tweet.stop_token }}</p>
+									{% elif tweet.sentiment == 'neutral'%}
+									<p style="background: #5DADE2;color: black;padding: 0.25em;">{{ tweet.raw_tweet }}</p>
+									<p>{{ tweet.raw_token }}</p>
+									<p>{{ tweet.stop_token }}</p>
+								{% else %}
+									<p style="background: red;color: white;padding: 0.25em;">{{ tweet.raw_tweet }}</p>
+									<p>{{ tweet.raw_token }}</p>
+									<p>{{ tweet.stop_token }}</p>
+								{% endif %}
+								<!--<ul class="actions">
+									<li><a href="#" class="button">More</a></li>
+								</ul>-->
+							</article>
+						{% endfor %}
+					</div>
+					</section>
+	{% endblock %}

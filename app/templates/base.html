@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>{{ title }} - VOUSMEEVOYEZ</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/static/lib/html5up-editorial/assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!--c3 lib-->
+		<link rel="stylesheet" href="/static/lib/c3lib/c3.min.css"/>
+	</head>
+	<body>
+		<!-- Wrapper -->
+		<div id="wrapper">
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+					<!-- Header -->
+					<header id="header">
+						{% if title %}
+						<h2>{{ title }}</h2>
+						{% else %}
+						<h2>{{ title }}</h2>
+						{% endif %}
+					</header>
+					{% block content %}
+					{% endblock %}
+				</div>
+			</div>
+			<!-- Sidebar -->
+			<div id="sidebar">
+				<div class="inner">
+					<!-- Search -->
+					<section id="search" class="alt">
+						<form method="post" action="#">
+							<input type="text" name="query" id="query" placeholder="Search" />
+						</form>
+					</section>
+					<!-- Menu -->
+					<nav id="menu">
+						<header class="major">
+							<h2>Menu</h2>
+						</header>
+						<ul>
+							<li><a href="{{ url_for('index_page')}}">Sentiment Analysis</a></li>
+							<li><a href="#">Result</a></li>
+						</ul>
+					</nav>
+					<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; <a href="">VOUSMEEVOYEZ</a> 2017. All rights reserved.</p>
+					</footer>
+				</div>
+			</div>
+		</div>
+		<!-- c3.js -->
+		<script src="/static/lib/c3lib/d3.v3.min.js" charset="utf-8"></script>
+		<script src="/static/lib/c3lib/c3.min.js"></script>
+		<!-- Scripts -->
+		<script src="/static/custom.js"></script>
+		<script src="/static/lib/html5up-editorial/assets/js/jquery.min.js"></script>
+		<script src="/static/lib/html5up-editorial/assets/js/skel.min.js"></script>
+		<script src="/static/lib/html5up-editorial/assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="/static/lib/html5up-editorial/assets/js/main.js"></script>
+	</body>
+</html>
